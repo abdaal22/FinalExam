@@ -35,15 +35,17 @@ class TextStatistics {
 
     public void addLine(String line) {
         lineCount++;
-        characterCount += line.length();
+        String Sentences = line.replace(" ", "");
+        characterCount += Sentences.length();
         String[] words = line.split("\\s+");
         wordCount += words.length;
         for (String word : words) {
-            if (word.length() > longestWord.length()) {
+            if (word.length() >= longestWord.length()) {
                 longestWord = word;
             }
         }
     }
+
     public int getLineCount() {
         return lineCount;
     }
@@ -61,3 +63,6 @@ class TextStatistics {
     }
 
 }
+
+
+

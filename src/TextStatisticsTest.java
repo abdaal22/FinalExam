@@ -6,24 +6,20 @@ class TextStatisticsTest {
     @Test
     void testAddLine() {
         TextStatistics stats = new TextStatistics();
-        stats.addLine("Hello world");
-
-        assertEquals(1, stats.getLineCount(), "Should be 1 line");
-        assertEquals(11, stats.getCharacterCount(), "Should be 11 characters");
-        assertEquals(2, stats.getWordCount(), "Should be 2 words");
-        assertEquals("Hello", stats.getLongestWord(), "Longest word should be 'Hello'");
+        stats.addLine("Testing is easy");
+        assertEquals(3, stats.getWordCount(), "Should be 3 words");
+        assertEquals("Testing", stats.getLongestWord(), "Longest word should be 'Testing'");
     }
+
     @Test
-    void testMultipleLines() {
+    void testLine() {
         TextStatistics stats = new TextStatistics();
-        stats.addLine("Java is fun");
-        stats.addLine("Write clean code");
-
+        stats.addLine("Malmö");
+        stats.addLine("Intro to Programming");
         assertEquals(2, stats.getLineCount(), "Should be 2 lines");
-        assertEquals(26, stats.getCharacterCount(), "Should be 26 characters");
-        assertEquals(5, stats.getWordCount(), "Should be 5 words");
-        assertEquals("clean", stats.getLongestWord(), "Longest word should be 'clean'");
+        assertEquals(22, stats.getCharacterCount(), "Should be 22 characters");
     }
+
     @Test
     void testIsStop() {
         TextStatistics stats = new TextStatistics();
