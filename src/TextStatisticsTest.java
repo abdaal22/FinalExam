@@ -28,3 +28,4 @@ class TextStatisticsTest {
         assertFalse(stats.isStop("continue"), "Input 'continue' should return false");
     }
 }
+
